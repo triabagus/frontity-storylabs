@@ -2,9 +2,9 @@ const settings = {
   "name": "my-first-frontity-project",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "https://kulinerkota.com",
+      "title": "Kuliner Kota - Referensi Lengkap Kuliner Khas di Indonesia",
+      "description": "Referensi Terbaik Wisata Kuliner di Indonesia. Kuliner Khas, Tempat Makan Hingga Pusat Oleh-oleh Khas Daerah Kami Rangkum Lengkap Untuk Anda"
     }
   },
   "packages": [
@@ -18,25 +18,25 @@ const settings = {
               "/"
             ],
             [
-              "Nature",
-              "/category/nature/"
+              "Kuliner",
+              "#"
             ],
             [
-              "Travel",
-              "/category/travel/"
+              "Oleh-oleh",
+              "#"
             ],
             [
-              "Japan",
-              "/tag/japan/"
+              "Destinasi",
+              "#"
             ],
             [
-              "About Us",
-              "/about-us/"
+              "Resep",
+              "/category/resep/"
             ]
           ],
           "featured": {
             "showOnList": false,
-            "showOnPost": false
+            "showOnPost": true,
           }
         }
       }
@@ -45,12 +45,14 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://kulinerkota.com"
         }
       }
     },
     "@frontity/tiny-router",
-    "@frontity/html2react"
+    "@frontity/html2react",
+    "@frontity/yoast",
+    "@frontity/wp-comments",
   ]
 };
 
