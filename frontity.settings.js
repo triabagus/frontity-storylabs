@@ -2,24 +2,27 @@ const settings = {
   "name": "my-first-frontity-project",
   "state": {
     "frontity": {
-      "url": "https://kulinerkota.com",
+      "url": "https://kulinerkota.com/",
       "title": "Kuliner Kota - Referensi Lengkap Kuliner Khas di Indonesia",
       "description": "Referensi Terbaik Wisata Kuliner di Indonesia. Kuliner Khas, Tempat Makan Hingga Pusat Oleh-oleh Khas Daerah Kami Rangkum Lengkap Untuk Anda"
     }
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
+      "name": "@frontity/twentytwenty-theme",
       "state": {
         "theme": {
           "menu": [
-            [
-              "Home",
-              "/"
-            ],
+            ["Home","/"],
             [
               "Kuliner",
-              "#"
+              "#",
+              {
+                "submenu": [
+                  ["kuliner 1", "#"],
+                  ["kuliner 2", "#"],
+                ]
+              }
             ],
             [
               "Oleh-oleh",
@@ -29,10 +32,7 @@ const settings = {
               "Destinasi",
               "#"
             ],
-            [
-              "Resep",
-              "/category/resep/"
-            ]
+            ["Resep","/category/resep/"]
           ],
           "featured": {
             "showOnList": false,
@@ -45,7 +45,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://kulinerkota.com"
+          "url": "https://kulinerkota.com/"
         }
       }
     },

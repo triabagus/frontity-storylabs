@@ -19,11 +19,20 @@ const Nav = ({ state }) => (
           <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
             {name}
           </Link>
+
+          <StyledMenu>
+              <li>
+                <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
+                  {name}
+                </Link>
+              </li>
+          </StyledMenu>
         </NavItem>
       );
     })}
   </NavContainer>
 );
+
 
 export default connect(Nav);
 
@@ -43,12 +52,18 @@ const NavContainer = styled.nav`
 `;
 
 const NavItem = styled.div`
+  position: relative;
+  overflow: hidden;
   padding: 0;
   margin: 0 16px;
   color: #fff;
   font-size: 0.9em;
   box-sizing: border-box;
   flex-shrink: 0;
+
+  :hover ul{
+    display:block;
+  }
 
   & > a {
     display: inline-block;
@@ -74,4 +89,16 @@ const NavItem = styled.div`
       width: 24px;
     }
   }
+`;
+
+const StyledMenu = styled.ul`
+  display: block;
+  position: absolute;
+  color:red;
+  bottom:0;
+  right:0;
+  z-index:999;
+  font-size: 1rem;
+  font-weight: 500;
+  list-style: none;
 `;
