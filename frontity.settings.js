@@ -5,34 +5,15 @@ const settings = {
       "url": "https://kulinerkota.com/",
       "title": "Kuliner Kota - Referensi Lengkap Kuliner Khas di Indonesia",
       "description": "Referensi Terbaik Wisata Kuliner di Indonesia. Kuliner Khas, Tempat Makan Hingga Pusat Oleh-oleh Khas Daerah Kami Rangkum Lengkap Untuk Anda"
-    }
+    },
   },
   "packages": [
     {
-      "name": "@frontity/twentytwenty-theme",
+      "name": "@frontity/mars-theme",
       "state": {
         "theme": {
-          "menu": [
-            ["Home","/"],
-            [
-              "Kuliner",
-              "#",
-              {
-                "submenu": [
-                  ["kuliner 1", "#"],
-                  ["kuliner 2", "#"],
-                ]
-              }
-            ],
-            [
-              "Oleh-oleh",
-              "#"
-            ],
-            [
-              "Destinasi",
-              "#"
-            ],
-            ["Resep","/category/resep/"]
+          "menu":[
+            
           ],
           "featured": {
             "showOnList": false,

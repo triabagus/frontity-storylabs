@@ -7,6 +7,9 @@ import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
 
+// import Archive from "./archive";
+// import SearchResults from "./search/search-results";
+
 /**
  * Theme is the root React component of our theme. The one we will export
  * in roots.
@@ -34,7 +37,9 @@ const Theme = ({ state }) => {
 
       {/* Add the header of the site. */}
       <HeadContainer>
-        <Header />
+        <div>
+          <Header />
+        </div>
       </HeadContainer>
 
       {/* Add the main section. It renders a different component depending
@@ -42,6 +47,8 @@ const Theme = ({ state }) => {
       <Main>
         <Switch>
           <Loading when={data.isFetching} />
+          {/* <SearchResults when={data.isSearch} />
+          <Archive when={data.isArchive} /> */}
           <List when={data.isArchive} />
           <Post when={data.isPostType} />
           <PageError when={data.isError} />
@@ -56,8 +63,7 @@ export default connect(Theme);
 const globalStyles = css`
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
   }
   a,
   a:visited {
@@ -67,18 +73,24 @@ const globalStyles = css`
 `;
 
 const HeadContainer = styled.div`
+  height: 70px;
+  background-color: #F5F5F5;
+  width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  background-color: #1f38c5;
+
+  & > div{
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 `;
 
 const Main = styled.div`
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(
-    180deg,
-    rgba(66, 174, 228, 0.1),
-    rgba(66, 174, 228, 0)
-  );
+  background-color: #fff;
 `;
