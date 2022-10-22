@@ -48,7 +48,7 @@ const Html2React = libraries.html2react.Component;
   }, [actions.source]);
 
   // Load the post, but only if the data is ready.
-  return data.isReady ? (
+  return data.isReady && (
     <Container>
       <div>
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
@@ -81,16 +81,14 @@ const Html2React = libraries.html2react.Component;
         // which already contains the thumbnail.
         <div dangerouslySetInnerHTML={{ __html: post.description.rendered }} />
       ) : (
-        // Render the content using the Html2React component so the HTML is
-        // processed by the processors we included in the
-        // libraries.html2react.processors array.
         <Content>
-          <Html2React html={post.content.rendered} />
+          <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
         </Content>
+       
         )}
         <Comments postId={post.id} />
     </Container>
-  ) : null;
+  );
 };
 
 export default connect(Post);
