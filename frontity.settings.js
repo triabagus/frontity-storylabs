@@ -12,8 +12,35 @@ const settings = {
       "name": "@frontity/mars-theme",
       "state": {
         "theme": {
-          "menu":[
-            
+          "menu": [
+            {
+              "ID": 1,
+              "title": "kuliner",
+              "url": "kuliner",
+              "child_items": [
+                {
+                  "ID": 3,
+                  "title": "Kuliner",
+                  "url": "kuliner"
+                },
+                {
+                  "ID": 4,
+                  "title": "Kuliner Malam",
+                  "url": "kuliner-malam"
+                },
+                {
+                  "ID": 5,
+                  "title": "Tempat Makan",
+                  "url": "tempat-makan"
+                },
+              ],
+            },
+            {
+              "ID": 2,
+              "title": "Resep",
+              "url": "resep",
+              "child_items": []
+            }
           ],
           "featured": {
             "showOnList": false,
