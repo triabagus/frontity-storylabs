@@ -12,12 +12,13 @@ import Link from "./link";
  * Two level menu (with one level of child menus)
  */
 const Nav = ({ state }) => {
-  const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items;
-  // console.log('ITEMS:',items)
+  // const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items;
+  const items = state.theme.menu;
+  console.log('ITEMS:',items)
   return (
     <NavContainer>
       {items.map((item) => {
-        if (!item.child_items) {
+        if (!item.child_items || item.child_items.length == 0) {
           return (
             <NavItem key={item.ID}>
               <Link link={item.url}>{item.title}</Link>
